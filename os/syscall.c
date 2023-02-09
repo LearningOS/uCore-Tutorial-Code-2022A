@@ -49,12 +49,12 @@ uint64 sys_gettimeofday(TimeVal *val, int _tz) // TODO: implement sys_gettimeofd
 
 uint64 sys_sbrk(int n)
 {
-  uint64 addr;
-  struct proc *p = curr_proc();
-  addr = p->program_brk;
-  if(growproc(n) < 0)
-    return -1;
-  return addr;
+	uint64 addr;
+	struct proc *p = curr_proc();
+	addr = p->program_brk;
+	if(growproc(n) < 0)
+		return -1;
+	return addr;
 }
 
 
